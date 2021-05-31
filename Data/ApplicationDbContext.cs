@@ -12,5 +12,7 @@ namespace OpticaSanfrancisco.Data
             : base(options)
         {
         }
+
+        public DbSet<OpticaSanfrancisco.Models.Citas> Citas {get; set;} 
     }
 }
