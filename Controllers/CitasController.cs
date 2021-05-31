@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using OpticaSanfrancisco.Data;
 using OpticaSanfrancisco.Models;
+using OfficeOpenXml;
+using OfficeOpenXml.Table;
+using Microsoft.EntityFrameworkCore;
 
 namespace OpticaSanfrancisco.Controllers
 {
@@ -79,29 +82,28 @@ namespace OpticaSanfrancisco.Controllers
              ViewData["Message"] = "La cita se edito";
             return View(r);
         }
-        /*public IActionResult ExportarExcel()
-{
-    string excelContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-    var Personal = _context.Personal.AsNoTracking().ToList();
-    using (var libro = new ExcelPackage())
-    {
-        var worksheet = libro.Workbook.Worksheets.Add("Personal");
-        worksheet.Cells["A1"].LoadFromCollection(Personal, PrintHeaders: true);
-        for (var col = 1; col < Personal.Count + 1; col++)
-        {
-            worksheet.Column(col).AutoFit();
-        }
-
+        public IActionResult ExportarExcel()
+            {
+                string excelContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                var citas = _context.Citas.AsNoTracking().ToList();
+                using (var libro = new ExcelPackage())
+                    {
+                        var worksheet = libro.Workbook.Worksheets.Add("Citas");
+                        worksheet.Cells["A1"].LoadFromCollection(citas, PrintHeaders: true);
+                        for (var col = 1; col < citas.Count + 1; col++)
+                            {
+                                worksheet.Column(col).AutoFit();
+                            }
         // Agregar formato de tabla
-        var tabla = worksheet.Tables.Add(new ExcelAddressBase(fromRow: 1, fromCol: 1, toRow: Personal.Count + 1, toColumn: 8), "Personal");
+        var tabla = worksheet.Tables.Add(new ExcelAddressBase(fromRow: 1, fromCol: 1, toRow: citas.Count + 1, toColumn: 5), "Citas");
         tabla.ShowHeader = true;
         tabla.TableStyle = TableStyles.Light6;
         tabla.ShowTotal = true;
 
-        return File(libro.GetAsByteArray(), excelContentType, "Personal.xlsx");
+        return File(libro.GetAsByteArray(), excelContentType, "Citas.xlsx");
     }
 }
     
-*/
+
     }
 }
