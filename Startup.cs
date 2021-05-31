@@ -32,10 +32,6 @@ namespace OpticaSanfrancisco
         {
             
 
-services.AddDbContext<ApplicationDbContext>(options =>
-options.UseNpgsql(
-Configuration.GetConnectionString("PostgressConnection")));
-services.AddDatabaseDeveloperPageExceptionFilter();
 
 
 
