@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\USMP-2021-1\\Ing. software 1\\Proyectoweb\\2\\OpticaSanfrancisco\\OpticaSanfrancisco.csproj": {}
+    "D:\\Universidad San Martin de Porres\\2021-1\\ing sotfware\\PROYECTOWEB\\OpticaSanfrancisco\\OpticaSanfrancisco.csproj": {}
   },
   "projects": {
-    "D:\\USMP-2021-1\\Ing. software 1\\Proyectoweb\\2\\OpticaSanfrancisco\\OpticaSanfrancisco.csproj": {
+    "D:\\Universidad San Martin de Porres\\2021-1\\ing sotfware\\PROYECTOWEB\\OpticaSanfrancisco\\OpticaSanfrancisco.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\USMP-2021-1\\Ing. software 1\\Proyectoweb\\2\\OpticaSanfrancisco\\OpticaSanfrancisco.csproj",
+        "projectUniqueName": "D:\\Universidad San Martin de Porres\\2021-1\\ing sotfware\\PROYECTOWEB\\OpticaSanfrancisco\\OpticaSanfrancisco.csproj",
         "projectName": "OpticaSanfrancisco",
-        "projectPath": "D:\\USMP-2021-1\\Ing. software 1\\Proyectoweb\\2\\OpticaSanfrancisco\\OpticaSanfrancisco.csproj",
-        "packagesPath": "C:\\Users\\Dennys\\.nuget\\packages\\",
-        "outputPath": "D:\\USMP-2021-1\\Ing. software 1\\Proyectoweb\\2\\OpticaSanfrancisco\\obj\\",
+        "projectPath": "D:\\Universidad San Martin de Porres\\2021-1\\ing sotfware\\PROYECTOWEB\\OpticaSanfrancisco\\OpticaSanfrancisco.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Universidad San Martin de Porres\\2021-1\\ing sotfware\\PROYECTOWEB\\OpticaSanfrancisco\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dennys\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[4.5.3.3, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.4, )"
@@ -57,6 +61,20 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[5.0.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "microsoft.entityframeworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "microsoft.entityframeworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.6, )"
             }
           },
           "imports": [
@@ -77,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
