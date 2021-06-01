@@ -9,6 +9,7 @@
     <title>@ViewData["Title"] - Opticas</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/estilos.css" />
     <!--Google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <!--Font Awesome-->
@@ -17,10 +18,10 @@
 </head>
 
 <body>
-    <header>
+    <header class="header"> 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><h1  class="text-dark">Opticas </h1></a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="../img/logo.jpg" width="100"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -44,7 +45,7 @@
         </main>
     </div>
 
-     <footer class="text-center text-lg-start bg-light text-muted">
+     <footer class="text-center text-lg-start bg-light text-muted" style="margin-top: 50px; margin-bottom: 0;">
   <!-- Section: Social media -->
   <section
     class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
