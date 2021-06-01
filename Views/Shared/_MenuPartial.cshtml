@@ -1,0 +1,29 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @if(UserManager.GetUserName(User).Equals("ADMIN"))
+    {
+
+   <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Citas" asp-action="Citas"> CITAS</a>
+    </li>
+ 
+}
+}
+
+else{ 
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Contactanos" asp-action="Create"> CONTACTANOS</a>
+    </li> 
+   
+
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Citas" asp-action="NuevaCita">CITAS</a>
+    </li> 
+
+
+ 
+}
