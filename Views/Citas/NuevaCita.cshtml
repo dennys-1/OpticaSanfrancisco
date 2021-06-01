@@ -2,38 +2,83 @@
     
     Layout="_Layout";
 }
+
 @model OpticaSanfrancisco.Models.Citas
 
+<div class="col-md-1 order-md-1">
+</div>
+    <div class="col-md-10 order-md-1">
+      <h4 style="text-align: center;" class="mb-3 colorForm">Nueva Cita</h4>
+      <form asp-controller="Citas" asp-action="NuevaCita">
+        <div class="row">
+          <div class="col-md-6 mb-3 formM">
+            <label asp-for="Nombres" class="colorForm">Primer Nombre</label>
+            <input asp-for="Nombres"  class="form-control" />
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3 formM">
+            <label asp-for="Apellidos" class="colorForm">Apellidos</label>
+             <input asp-for="Apellidos"  class="form-control" />
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+        </div>
 
-<form asp-controller="Citas" asp-action="NuevaCita">
-    <label asp-for="TipoDeCita" class="control-label"></label>
-     <input asp-for="TipoDeCita"  class="form-control" />
+        <div class="mb-3 formM">
+          <label asp-for="TipoDeCita" class="colorForm">Tipo de cita</label>
+          <input asp-for="TipoDeCita"  class="form-control" />
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+        
 
-     <label asp-for="Nombres" class="control-label"></label>
-     <input asp-for="Nombres"  class="form-control" />
+        <div class="mb-3 formM">
+          <label asp-for="Email" class="colorForm">Email</label>
+          <input asp-for="Email" type="text" class="form-control" />
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
 
-     <label asp-for="Apellidos" class="control-label"></label>
-     <input asp-for="Apellidos"  class="form-control" />
+        <div class="mb-3 formM">
+          <label asp-for="Celular" class="colorForm">Telefono </label>
+          <input asp-for="Celular" type="number" class="form-control" />
+        </div>
 
-    <label asp-for="Email" class="control-label"></label>
-     <input asp-for="Email" type="text" class="form-control" />
-
-     <label asp-for="Celular" class="control-label"></label>
-     <input asp-for="Celular" type="text" class="form-control" />
-
+        <div class="row">
+          <div class="col-md-5 mb-3 formM">
+            <label asp-for="DNI" class="colorForm">DNI</label>
+            <input asp-for="DNI" type="number" class="form-control" />
+            <div class="invalid-feedback">
+              Dni invalido
+            </div>
+          </div>
+          <div class="col-md-4 mb-3 formM">
+            <label asp-for="Fecha" class="colorForm">Fecha</label>
+            <input asp-for="Fecha"  class="form-control" />
+            <div class="invalid-feedback">
+             Selecciona un departamento
+            </div>
+          </div>
+          <div class="col-md-3 mb-3 formM">
+            <label asp-for="Hora" class="colorForm">Hora</label>
+            <input asp-for="Hora" type="time" class="form-control" />
+            <div class="invalid-feedback">
+            La hora es requerida
+            </div>
+          </div>
+        </div>
     
-     <label asp-for="DNI" class="control-label"></label>
-     <input asp-for="DNI" type="text" class="form-control" />
-
-     <label asp-for="Fecha" class="control-label"></label>
-     <input asp-for="Fecha"  class="form-control" />
-
-      <label asp-for="Hora" class="control-label"></label>
-     <input asp-for="Hora" type="time" class="form-control" />
-     
-
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Registrar Cita</button> 
+      
+        <div class="button">
+        <button style="border-radius: 4px;" type="submit" onclick="confirm('Cita recervada con exito');  clicked();">Registrar cita</button>
+        </div>
+        </form>
     </div>
-    </form>
+  </div>
+
 <h1>@ViewData["Message"]</h1>

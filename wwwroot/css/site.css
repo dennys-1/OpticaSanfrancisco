@@ -1,4 +1,24 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+﻿
+/* citas */
+.colorForm{
+  color:#213B52 ;
+  -webkit-text-stroke: 1px  #213B52;
+  font-size:x-large;
+}
+.tables{
+  background: #213B52;
+}
+button:hover {
+  
+  color: #33A6FF;
+  text-decoration: none;
+}
+
+
+
+
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {

@@ -4,50 +4,65 @@
 }
 @model Contactanos
 
-<div class="row">
-  
-   <h1 style="text-align: center;">Contactanos</h1>
+
+
+<div class="col-md-1 order-md-1"></div>
+    <div class="col-md-10 order-md-1">
+      <h4 style="text-align: center;" class="mb-3 colorForm">CONTÁCTANOS</h4>
+       <form class="needs-validation" novalidate=""></form>
+        <div class="row">
+          <div class="col-md-6 mb-3 formM">
+            <label for="firstName" class="colorForm">Nombre</label>
+            <input asp-for="Nombre"  class="form-control" />
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3 formM">
+            <label for="lastName" class="colorForm">Apellidos</label>
+             <input asp-for="Apellidos"  class="form-control" />
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 formM">
+          <label for="firstName" class="colorForm">Celular</label>
+          <input asp-for="Celular"  class="form-control" />
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+        
+
+        <div class="mb-3 formM">
+          <label for="email" class="colorForm">Email</label>
+          <input asp-for="Email" type="text" class="form-control" />
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+        <div class="mb-3 formM">
+          <label for="tel" class="colorForm">Mensaje </label>
+          <input asp-for="Mensaje" type="number" class="form-control" />
+        </div>
+
+        </div>
+    
+      
+       <button type="button" class="btn btn-info">ENVIAR</button>
+        
+        </div>
+
+    </div>
   </div>
 
-<div class="row" >
-  <div class="col-md-6">
-<form asp-controller="Contactanos" asp-action="Create">
-     <div class="form-group" style="text-align: left;">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" type="text" required/>
-            </div>    
-
-            <div class="form-group" style="text-align: left;">
-                <label asp-for="Apellidos" class="control-label"></label>
-                <input asp-for="Apellidos" class="form-control"  type="text" required/>
-            </div>               
-                   
-            <div class="form-group" style="text-align: left;">
-                <label asp-for="Celular" class="control-label"></label>
-                <input asp-for="Celular" class="form-control" type="number" maxlength="9" required />
-            </div>  
-
-            <div class="form-group" style="text-align: left;">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" type="email" required />
-            </div>  
-
-            <div  class="mb-3" style="text-align: left;" >
-                <label asp-for="Mensaje" class="control-label" ></label>
-                <textarea asp-for="Mensaje"  class="form-control "></textarea>
-            </div>   
-                   
-
-            <div class="form-group"  >
-                 <button type="submit" class="btn btn-primary" type="text" required>Enviar</button> 
-            </div>                
-
-</form>
-
-  </div>
-
-<div class="col-md-6" style="width: 100%;">
+<div class="col-md-6-center" style="width: 50%;">
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15310.15374077495!2d-71.5321778!3d-16.3974585!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3704d138cf94c07b!2sCentro%20Optico%20San%20Fancisco!5e0!3m2!1ses!2spe!4v1622488562771!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
+
+
 
 <h1>@ViewData["Message"]</h1>
