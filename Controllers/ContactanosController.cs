@@ -28,6 +28,14 @@ namespace OpticaSanfrancisco.Controllers
             return View();
         }
 
+        public IActionResult Index()
+        {
+            var listacontactanos = _context.Contactanos.ToList();
+            ViewData["message"]="";
+            return View(listacontactanos);
+        }
+
+
         [HttpGet]
         public IActionResult Create()
         {

@@ -1,7 +1,3 @@
-@{
-    
-    Layout="_Layout";
-}
 @model IEnumerable<OpticaSanfrancisco.Models.Contactanos>
 
 <h2>Lista de Usuarios registrados en Contactanos</h2>
@@ -37,17 +33,17 @@
         {
             <tr>
                 <th scope="row">
-                    @Html.DisplayNameFor(model => model.Id)
+                    @Html.DisplayFor(model => item.Id)
                 </th>
                 <td>
                     @Html.DisplayFor(modelItem => item.Nombre)
                 </td>
 
-                  <th scope="col">
-                    @Html.DisplayNameFor(model => model.Apellidos)
+                  <th >
+                    @Html.DisplayFor(model => item.Apellidos)
                 </th>
-                    <th scope="col">
-                    @Html.DisplayNameFor(model => model.Celular)
+                    <th>
+                    @Html.DisplayFor(model => item.Celular)
                 </th>
 
                 <td>
