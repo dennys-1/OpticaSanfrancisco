@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace OpticaSanfrancisco.Migrations
 {
-    public partial class incial : Migration
+    public partial class inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -65,6 +65,23 @@ namespace OpticaSanfrancisco.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Citas", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "t_contactanos",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    nombre = table.Column<string>(type: "text", nullable: true),
+                    apellidos = table.Column<string>(type: "text", nullable: true),
+                    celular = table.Column<string>(type: "text", nullable: true),
+                    email = table.Column<string>(type: "text", nullable: true),
+                    mensaje = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_t_contactanos", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -230,6 +247,9 @@ namespace OpticaSanfrancisco.Migrations
 
             migrationBuilder.DropTable(
                 name: "Citas");
+
+            migrationBuilder.DropTable(
+                name: "t_contactanos");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

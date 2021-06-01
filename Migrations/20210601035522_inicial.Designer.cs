@@ -10,8 +10,8 @@ using OpticaSanfrancisco.Data;
 namespace OpticaSanfrancisco.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210531072307_incial")]
-    partial class incial
+    [Migration("20210601035522_inicial")]
+    partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -260,6 +260,39 @@ namespace OpticaSanfrancisco.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Citas");
+                });
+
+            modelBuilder.Entity("OpticaSanfrancisco.Models.Contactanos", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Apellidos")
+                        .HasColumnType("text")
+                        .HasColumnName("apellidos");
+
+                    b.Property<string>("Celular")
+                        .HasColumnType("text")
+                        .HasColumnName("celular");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text")
+                        .HasColumnName("email");
+
+                    b.Property<string>("Mensaje")
+                        .HasColumnType("text")
+                        .HasColumnName("mensaje");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("text")
+                        .HasColumnName("nombre");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("t_contactanos");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
