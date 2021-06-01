@@ -4,7 +4,14 @@
 }
 @model Contactanos
 
-
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  
+  <div class="carousel-inner">
+    <div class="carousel-item active"style="margin-top: -20%;">
+      <img src="~/Img/4.jpg" class="d-block w-200" alt="">
+      <div class="carousel-caption d-none d-md-block" >
+        <div class="col-md-1 order-md-1">
+    </div>
 
 <div class="col-md-1 order-md-1"></div>
     <div class="col-md-10 order-md-1">
@@ -42,13 +49,15 @@
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
           </div>
-        </div>
+        
 
         <div class="mb-3 formM">
           <label for="tel" class="colorForm">Mensaje </label>
           <input asp-for="Mensaje" type="number" class="form-control" />
         </div>
 
+        </div>
+        
         </div>
     
       
@@ -58,11 +67,19 @@
 
     </div>
   </div>
+  <br>
 
-<div class="col-md-6-center" style="width: 50%;">
+<div class="col-md-6-center" style="width:50%; margin-left: 30%;
+margin-top: 10px; margin-bottom: 100px;">
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15310.15374077495!2d-71.5321778!3d-16.3974585!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3704d138cf94c07b!2sCentro%20Optico%20San%20Fancisco!5e0!3m2!1ses!2spe!4v1622488562771!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
 
 
 
 <h1>@ViewData["Message"]</h1>
+    </div>
+      
+    </div>
+  
+  </div>
+</div>
