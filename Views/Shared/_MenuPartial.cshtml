@@ -4,7 +4,7 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    @if(UserManager.GetUserName(User).Equals("ADMIN@gmail.com"))
+    @if(UserManager.GetUserName(User).Equals("admin@gmail.com"))//contra Admin12.
     {
 
    <li class="nav-item">
@@ -12,7 +12,7 @@
     </li>
  
 }
-}
+
 
 else{ 
     <li class="nav-item">
@@ -26,4 +26,11 @@ else{
 
 
  
+}
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Contactanos" asp-action="Create">Contacto</a>
+    </li> 
 }
