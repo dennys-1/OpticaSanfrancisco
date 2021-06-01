@@ -8,12 +8,12 @@
 .tables{
   background: #213B52;
 }
-button:hover {
-  
-  color: #33A6FF;
-  text-decoration: none;
-}
 
+#btt
+{
+  color: #ffffff;
+  background-color:#10A1F3;
+}
 
 
 
