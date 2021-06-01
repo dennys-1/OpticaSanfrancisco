@@ -5,20 +5,21 @@
 
 @model OpticaSanfrancisco.Models.Citas
 
-<div class="col-md-1 order-md-1"></div>
+<div class="col-md-1 order-md-1">
+</div>
     <div class="col-md-10 order-md-1">
       <h4 style="text-align: center;" class="mb-3 colorForm">Nueva Cita</h4>
-      <form class="needs-validation" novalidate="">
+      <form asp-controller="Citas" asp-action="NuevaCita">
         <div class="row">
           <div class="col-md-6 mb-3 formM">
-            <label for="firstName" class="colorForm">Primer Nombre</label>
+            <label asp-for="Nombres" class="colorForm">Primer Nombre</label>
             <input asp-for="Nombres"  class="form-control" />
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
           </div>
           <div class="col-md-6 mb-3 formM">
-            <label for="lastName" class="colorForm">Apellidos</label>
+            <label asp-for="Apellidos" class="colorForm">Apellidos</label>
              <input asp-for="Apellidos"  class="form-control" />
             <div class="invalid-feedback">
               Valid last name is required.
@@ -27,7 +28,7 @@
         </div>
 
         <div class="mb-3 formM">
-          <label for="firstName" class="colorForm">Tipo de cita</label>
+          <label asp-for="TipoDeCita" class="colorForm">Tipo de cita</label>
           <input asp-for="TipoDeCita"  class="form-control" />
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
@@ -36,7 +37,7 @@
         
 
         <div class="mb-3 formM">
-          <label for="email" class="colorForm">Email</label>
+          <label asp-for="Email" class="colorForm">Email</label>
           <input asp-for="Email" type="text" class="form-control" />
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
@@ -44,30 +45,30 @@
         </div>
 
         <div class="mb-3 formM">
-          <label for="tel" class="colorForm">Telefono </label>
+          <label asp-for="Celular" class="colorForm">Telefono </label>
           <input asp-for="Celular" type="number" class="form-control" />
         </div>
 
         <div class="row">
           <div class="col-md-5 mb-3 formM">
-            <label for="country" class="colorForm">DNI</label>
-            <input asp-for="Celular" type="number" class="form-control" />
+            <label asp-for="DNI" class="colorForm">DNI</label>
+            <input asp-for="DNI" type="number" class="form-control" />
             <div class="invalid-feedback">
               Dni invalido
             </div>
           </div>
           <div class="col-md-4 mb-3 formM">
-            <label for="date" class="colorForm">Fecha</label>
+            <label asp-for="Fecha" class="colorForm">Fecha</label>
             <input asp-for="Fecha"  class="form-control" />
             <div class="invalid-feedback">
              Selecciona un departamento
             </div>
           </div>
           <div class="col-md-3 mb-3 formM">
-            <label for="zip" class="colorForm">Hora</label>
+            <label asp-for="Hora" class="colorForm">Hora</label>
             <input asp-for="Hora" type="time" class="form-control" />
             <div class="invalid-feedback">
-             El Zip es requerido
+            La hora es requerida
             </div>
           </div>
         </div>
