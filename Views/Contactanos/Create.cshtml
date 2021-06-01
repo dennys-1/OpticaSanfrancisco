@@ -5,6 +5,7 @@
 @model Contactanos
 <div class="row">
   
+<<<<<<< HEAD
    <h1 style="text-align: center;">Contactanos</h1>
   </div>
 <div class="row" >
@@ -16,10 +17,25 @@
             </div>    
             <div class="form-group" style="text-align: left;">
                 <label asp-for="Apellidos" class="control-label"></label>
+=======
+   <h1 style="text-align: center;" class="mb-3 colorForm">Contactanos</h1>
+  </div>
+<div class="row" style="align-content: center;">
+  <img src="~/Img/Doctorfacherito.jpg" class="d-block w-200" alt="..." width="85%" style="position: absolute; margin-left:-68px;"> 
+  <div class="col-md-6">
+<form asp-controller="Contactanos" asp-action="Create">
+     <div class="form-group" style="text-align: left;">
+                <label asp-for="Nombre" class="control-label colorForm"></label>
+                <input asp-for="Nombre" class="form-control" type="text" required/>
+            </div>    
+            <div class="form-group" style="text-align: left;">
+                <label asp-for="Apellidos" class="control-label colorForm"></label>
+>>>>>>> 715c0c50b32fcd4983a54bc5cc70e54943f418bd
                 <input asp-for="Apellidos" class="form-control"  type="text" required/>
             </div>               
                    
             <div class="form-group" style="text-align: left;">
+<<<<<<< HEAD
                 <label asp-for="Celular" class="control-label"></label>
                 <input asp-for="Celular" class="form-control" type="number" maxlength="9" required />
             </div>  
@@ -29,6 +45,17 @@
             </div>  
             <div  class="mb-3" style="text-align: left;" >
                 <label asp-for="Mensaje" class="control-label" ></label>
+=======
+                <label asp-for="Celular" class="control-label colorForm"></label>
+                <input asp-for="Celular" class="form-control" type="number" maxlength="9" required />
+            </div>  
+            <div class="form-group" style="text-align: left;">
+                <label asp-for="Email" class="control-label colorForm"></label>
+                <input asp-for="Email" class="form-control" type="email" required />
+            </div>  
+            <div  class="mb-3" style="text-align: left;" >
+                <label asp-for="Mensaje" class="control-label colorForm"></label>
+>>>>>>> 715c0c50b32fcd4983a54bc5cc70e54943f418bd
                 <textarea asp-for="Mensaje"  class="form-control "></textarea>
             </div>   
                    
@@ -41,8 +68,16 @@
 
   </div>
 
+<<<<<<< HEAD
 <div class="col-md-6" style="width: 100%;">
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15310.15374077495!2d-71.5321778!3d-16.3974585!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3704d138cf94c07b!2sCentro%20Optico%20San%20Fancisco!5e0!3m2!1ses!2spe!4v1622488562771!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
 
 <h1>@ViewData["Message"]</h1
+=======
+<div class="col-md-6" style="width: 50%; margin-top:60px;">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15310.15374077495!2d-71.5321778!3d-16.3974585!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3704d138cf94c07b!2sCentro%20Optico%20San%20Fancisco!5e0!3m2!1ses!2spe!4v1622488562771!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<h1>@ViewData["Message"]</h1>
+>>>>>>> 715c0c50b32fcd4983a54bc5cc70e54943f418bd
