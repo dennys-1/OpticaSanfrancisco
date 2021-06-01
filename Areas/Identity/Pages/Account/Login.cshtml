@@ -4,13 +4,13 @@
 @{
     ViewData["Title"] = "Log in";
 }
+<link rel="stylesheet" href="~/css/estilos.css" />
 
-
-
-<div class="row mt-3 justify-content-center">
+<body class="fondo">
+<div class="row mt-3 justify-content-center text-center" >
     <div class="col-md-5">
         <section>
-            <form id="account" method="post">
+            <form id="account" method="post" class="contenedor text-center">
                 <h3 class="text-center">Ingresa con su <strong>Cuenta</strong> </h3>
                 <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Input.Password"></label>
-                    <input asp-for="Input.Password" class="form-control" />
+                    <input asp-for="Input.Password" class="form-control"  type="password"/>
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -87,6 +87,7 @@
         </section>
     </div>
 </div>
+</body>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

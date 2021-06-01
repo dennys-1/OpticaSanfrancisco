@@ -4,11 +4,13 @@
     ViewData["Title"] = "Registro";
 }
 
+<link rel="stylesheet" href="~/css/estilos.css" />
 
+<body class="fondo2">
 
 <div class="row mt-3 justify-content-center">
     <div class="col-md-5">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post" class="contenedor text-center"> 
             <h3 class="text-center">Crear <strong>Cuenta</strong> </h3>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
@@ -69,7 +71,7 @@
         </section>
     </div>
 </div>
-
+</body>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
