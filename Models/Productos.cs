@@ -11,21 +11,26 @@ namespace OpticaSanfrancisco.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
         public int ID {get; set;}
-
-        [Required(ErrorMessage = "Por favor ingrese nombre de producto")]
-        [Display(Name="Nombre Producto")]
-        public String Name {get; set;}
-
-        [Required(ErrorMessage = "Porfavor ingrese el precio")]
-        public Decimal Price { get; set; }
-
-        [Required(ErrorMessage = "Porfavor ingrese la imagen")]
-        public String ImagenName { get; set; }
-
-        [Required(ErrorMessage = "Please enter Status")]
+        public String Codigo {get; set;}
+        public String Familia { get; set; }
+        public String Linea { get; set; }
+        public String Categoria { get; set; }
+        public String Diseño { get; set; }
+        public String Descripcion_Producto { get; set; }
+        public String Marca { get; set; }
+        public String Material { get; set; }
+        public String Talla { get; set; }
+        public String Kalibre { get; set; }
+        public String Color { get; set; }
+        public String Descrip_Color { get; set; }
+        public int Stock { get; set; }
+        public decimal Precio { get; set; }
+        public String Imagen { get; set; }
+         [NotMapped]
         public String Status { get; set; }
 
-        //public virtual ICollection<Proforma> ProformaItems { get; set; }
+
+        public virtual ICollection<Proforma> ProformaItems { get; set; }
 
     }
 }

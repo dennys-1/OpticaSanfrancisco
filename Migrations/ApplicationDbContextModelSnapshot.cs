@@ -301,19 +301,49 @@ namespace OpticaSanfrancisco.Migrations
                         .HasColumnName("id")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("ImagenName")
-                        .IsRequired()
+                    b.Property<string>("Categoria")
                         .HasColumnType("text");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
+                    b.Property<string>("Codigo")
                         .HasColumnType("text");
 
-                    b.Property<decimal>("Price")
+                    b.Property<string>("Color")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Descrip_Color")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Descripcion_Producto")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Diseño")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Familia")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Imagen")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Kalibre")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Linea")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Marca")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Material")
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("Precio")
                         .HasColumnType("numeric");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
+                    b.Property<int>("Stock")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Talla")
                         .HasColumnType("text");
 
                     b.HasKey("ID");
@@ -402,10 +432,15 @@ namespace OpticaSanfrancisco.Migrations
             modelBuilder.Entity("OpticaSanfrancisco.Models.Proforma", b =>
                 {
                     b.HasOne("OpticaSanfrancisco.Models.Productos", "Producto")
-                        .WithMany()
+                        .WithMany("ProformaItems")
                         .HasForeignKey("ProductoID");
 
                     b.Navigation("Producto");
+                });
+
+            modelBuilder.Entity("OpticaSanfrancisco.Models.Productos", b =>
+                {
+                    b.Navigation("ProformaItems");
                 });
 #pragma warning restore 612, 618
         }
