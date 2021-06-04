@@ -2,6 +2,15 @@
 @{
     ViewData["Title"]="Catalogo";
 }
+<form  asp-action="Index" method="get">
+    <p>
+         <input type="search" placeholder="enter"  value=" @ViewData["Getemployeedetails"]" name="Empsearch"/>
+        <input type="submit" value="search" class="btn btn-primary" />
+
+        <a asp-action="Index">enter</a>
+    </p>
+</form>
+
 
 
 <h1>@ViewData["Title"]</h1>
