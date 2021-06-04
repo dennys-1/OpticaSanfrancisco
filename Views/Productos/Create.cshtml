@@ -19,22 +19,34 @@
             </div>
             <div class="form-group">
                 <label asp-for="Familia" class="control-label"></label>
-                <input asp-for="Familia" class="form-control" />
+                <select asp-for="Familia" class="form-control" >
+                     <option value="Montura">Montura</option>
+                </select>
                 <span asp-validation-for="Familia" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Linea" class="control-label"></label>
-                <input asp-for="Linea" class="form-control" />
+                <select asp-for="Linea" class="form-control" >
+                     <option value="Lentes Oftálmolicos">Lentes Oftálmolicos</option>
+                     <option value="Lentes de Sol">Lentes de Sol</option>
+                     <option value="Lentes Contacto">Lentes Contacto</option>
+                </select>
                 <span asp-validation-for="Linea" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Categoria" class="control-label"></label>
-                <input asp-for="Categoria" class="form-control" />
+                 <select asp-for="Categoria" class="form-control" >
+                     <option value="Aro Completo">Aro Completo</option>
+                     <option value="Arco SemiCompleto">Arco SemiCompleto</option>
+                </select>
                 <span asp-validation-for="Categoria" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Diseño" class="control-label"></label>
-                <input asp-for="Diseño" class="form-control" />
+                <select asp-for="Diseño" class="form-control" >
+                     <option value="Adulto">Adulto</option>
+                     <option value="Niño">Niño</option>
+                </select>
                 <span asp-validation-for="Diseño" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -44,12 +56,40 @@
             </div>
             <div class="form-group">
                 <label asp-for="Marca" class="control-label"></label>
-                <input asp-for="Marca" class="form-control" />
+                <select asp-for="Marca" class="form-control" >
+                    <option value="OAKLEY">OAKLEY</option>
+                    <option value="CARDUCCI">CARDUCCI</option>
+                    <option value="VOGUE">VOGUE</option>
+                    <option value="VOCACIO">VOCACIO</option>
+                    <option value="VOCACIO">ANGELINA</option>
+                    <option value="Anti-Blue-light">Anti-Blue-light</option>
+                    <option value="S/M">S/M</option>
+                    <option value="Silloneffe">Silloneffe</option>
+                    <option value="Overtop">Overtop</option>
+                    <option value="A-koko">A-koko</option>
+                    <option value="Sobre-lente-Niño">Sobre-lente-Niño</option>
+                    <option value="UV-400">UV-400</option>
+                    <option value="UV-401">UV-401</option>
+                    <option value="UV-402">UV-402</option>
+                    <option value="UV-403">UV-403</option>
+                    <option value="UV-404">UV-404</option>
+                     <option value="UV-405">UV-405</option>
+                    <option value="UV-406">UV-406</option>
+                    <option value="UV-407">UV-407</option>
+                    <option value="UV-408">UV-408</option>
+                    <option value="UV-409">UV-409</option>
+                    <option value="UV-410">UV-410</option>
+                </select>
                 <span asp-validation-for="Marca" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Material" class="control-label"></label>
-                <input asp-for="Material" class="form-control" />
+                 <select asp-for="Material" class="form-control" >
+                     <option value="Acetato">Acetato</option>
+                     <option value="Acetato-Metal">Acetato-Metal</option>
+                     <option value="Policarbonato">Policarbonato</option>
+                     <option value="Metal">Metal</option>
+                </select>
                 <span asp-validation-for="Material" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -90,8 +130,8 @@
             <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
                 <select asp-for="Status" class="form-control" >
-                     <option value="A">Active</option>
-                     <option value="I">Inactive</option>
+                     <option value="A">A</option>
+                     <option value="I">I</option>
                 </select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>                
