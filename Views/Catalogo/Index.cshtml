@@ -1,1 +1,41 @@
-﻿
+﻿@model IEnumerable<OpticaSanfrancisco.Models.Productos>
+@{
+    ViewData["Title"]="Catalogo";
+}
+
+
+<h1>@ViewData["Title"]</h1>
+  <div class="container">
+    <h1>@ViewData["Message"]</h1>
+    <div class="row">
+      <div class="col">
+        <div id="products" class="mb-3">
+          <div class="row">
+            @foreach (var item in Model) {
+            <div class="col-sm-4">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="card-img-actions">
+                    <img class="img-responsive" width="96" height="150"
+                       src="/img/@item.Imagen" alt="@item.Imagen"  />
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">@Html.DisplayFor(modelItem => item.Linea)</h5>
+                  <p class="card-text">@Html.DisplayFor(modelItem => item.Diseño)</p>
+                  <p class="card-text">@Html.DisplayFor(modelItem => item.Marca)</p>
+                  <p class="card-text">@Html.DisplayFor(modelItem => item.Descripcion_Producto)</p>
+                  <p class="card-text">@Html.DisplayFor(modelItem => item.Precio)</p>
+                  <p class="card-text">@Html.DisplayFor(modelItem => item.Status)</p>
+
+                  <a class="btn btn-primary" asp-action="Add" asp-route-id="@item.ID">Add</a>
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

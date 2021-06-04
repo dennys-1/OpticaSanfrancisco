@@ -56,7 +56,7 @@ namespace OpticaSanfrancisco.Controllers
         [HttpPost]
 
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Price,ImagenName,Status")] Productos producto)
+        public async Task<IActionResult> Create([Bind("ID,Codigo,Familia,Linea,Categoria,Diseño,Descripcion_Producto,Marca,Material,Talla,Kalibre,Color,Descrip_Color,Stock,Precio,Imagen,Status")] Productos producto)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace OpticaSanfrancisco.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Price,ImagenName,Status")] Productos producto)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Codigo,Familia,Linea,Categoria,Diseño,Descripcion_Producto,Marca,Material,Talla,Kalibre,Color,Descrip_Color,Stock,Precio,Imagen,Status")] Productos producto)
         {
             if (id != producto.ID)
             {
