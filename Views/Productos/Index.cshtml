@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" style="margin-left: -10%;">
     <thead>
         <tr>
             <th>
@@ -61,7 +61,8 @@
                 @Html.DisplayNameFor(model => model.Status)
             </th>
 
-            <th></th>
+            <th scope="col">
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -119,9 +120,9 @@
 
 
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-secondary">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary" style="width: 100%;">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-secondary" style="width: 100%;">Detalles</a>
+                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger" style="width: 100%;">Borrar</a>
             </td>
         </tr>
 }
