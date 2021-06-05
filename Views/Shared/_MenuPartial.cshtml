@@ -13,11 +13,13 @@
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="" asp-controller="Contactanos" asp-action="Index"> CONTACTANOS</a>
     </li>
+    
  
 }
 
 
 else{ 
+    
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="" asp-controller="Contactanos" asp-action="Create"> CONTACTANOS</a>
     </li> 
@@ -27,13 +29,18 @@ else{
         <a class="nav-link text-dark" asp-area="" asp-controller="Citas" asp-action="NuevaCita">CITAS</a>
     </li> 
 
+    <li class="nav-item center">
+        <a class="nav-link text-dark" class="center" asp-controller="Compra" asp-action="Carrito">CARRITO</a>
+    </li>
+
 
  
 }
 }
-else
+else 
 {
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="" asp-controller="Contactanos" asp-action="Create">Contacto</a>
     </li> 
+   
 }

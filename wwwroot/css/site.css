@@ -1,19 +1,22 @@
 ﻿
 /* citas */
 .colorForm{
-  color:#213B52 ;
-  -webkit-text-stroke: 1px  #213B52;
+  
+  color:#000000 ;
+  -webkit-text-stroke: 1px  #000000;
   font-size:x-large;
 }
 .tables{
-  background: #213B52;
+  background: #478bc7;
 }
 
 #btt
 {
+  
   color: #ffffff;
   background-color:#10A1F3;
 }
+
 
 
 

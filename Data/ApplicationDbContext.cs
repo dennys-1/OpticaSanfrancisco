@@ -14,6 +14,7 @@ namespace OpticaSanfrancisco.Data
         }
 
         public DbSet<OpticaSanfrancisco.Models.Citas> Citas {get; set;} 
+        public DbSet<OpticaSanfrancisco.Models.OrdenDetail> OrdenDetails {get; set;} 
         public DbSet<OpticaSanfrancisco.Models.Contactanos> Contactanos { get; set; }
 
     }

@@ -1,0 +1,59 @@
+@model IEnumerable<OpticaSanfrancisco.Models.OrdenDetail>
+@{
+    ViewData["Title"] = "Carrito de Compras";
+}
+
+<section id="catalogue" class="catalogue section-bg" style="text-align: center;">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 data-aos="fade-in">Carrito de Compras</h2>
+          <p data-aos="fade-in">Los producto seleccionados apareceran aca</p>
+        </div>
+
+
+    <div class="row catalogue-container" data-aos="fade-up">
+
+    <table class="table table-hover">
+    <thead class="tables">
+        <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Cantidad)
+                </th>
+        </tr>
+    </thead>
+	@foreach (var item in Model)
+	{
+        @if (item.Email == @User.Identity.Name)
+        {
+            <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            </tr>
+        }
+	}
+    </tbody>    
+</table>
+           
+            </div>
+    </section>
+
+      <div class="get-started" style="text-align: center;">
+                
+               <button id="btt">  <a  style="text-align: center;border-radius: 4px;" asp-area="" asp-controller="Compra" asp-action="Proceso">Confirmar</a></button>
+      </div>
+      <br>
+
