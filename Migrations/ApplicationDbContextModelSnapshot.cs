@@ -293,6 +293,39 @@ namespace OpticaSanfrancisco.Migrations
                     b.ToTable("t_contactanos");
                 });
 
+            modelBuilder.Entity("OpticaSanfrancisco.Models.OrdenDetail", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<decimal>("Cantidad")
+                        .HasColumnType("numeric")
+                        .HasColumnName("cantidad");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text")
+                        .HasColumnName("email");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("text")
+                        .HasColumnName("nombre");
+
+                    b.Property<decimal>("Precio")
+                        .HasColumnType("numeric")
+                        .HasColumnName("precio");
+
+                    b.Property<int>("productoID")
+                        .HasColumnType("integer")
+                        .HasColumnName("productoid");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("t_detalles_compra");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
