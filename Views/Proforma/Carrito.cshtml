@@ -1,0 +1,65 @@
+@model IEnumerable<OpticaSanfrancisco.Models.Proforma>
+@{
+    ViewData["Title"] = "Carrito de Compras";
+}
+
+<section id="catalogue" class="catalogue section-bg" style="text-align: center;">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 data-aos="fade-in">Carrito de Compras</h2>
+          <p data-aos="fade-in">Los producto seleccionados apareceran aca</p>
+        </div>
+
+
+    <div class="row catalogue-container" data-aos="fade-up">
+
+    <table class="table table-hover">
+    <thead class="tables">
+        <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Producto.Imagen)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Producto.Codigo)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+        </tr>
+    </thead>
+	@foreach (var item in Model)
+	{
+        //@if (item.Email == @User.Identity.Name)
+        //{
+            <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.Imagen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            </tr>
+        //}
+	}
+    </tbody>    
+</table>
+           
+            </div>
+    </section>
+
+      <div class="get-started" style="text-align: center;">
+                <a class="btn btn-primary" href="../Proforma/Proceso"> llevar</a>
+               <!--<button id="btt">  <a  style="text-align: center;border-radius: 4px;" asp-area="" asp-controller="Proforma" asp-action="Proceso">Confirmar</a></button>-->
+      </div>
+      <br>
+

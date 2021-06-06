@@ -10,8 +10,8 @@ using OpticaSanfrancisco.Data;
 namespace OpticaSanfrancisco.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210604050351_productos")]
-    partial class productos
+    [Migration("20210606050030_inicial")]
+    partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

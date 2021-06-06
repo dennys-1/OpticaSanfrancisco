@@ -104,7 +104,8 @@ namespace OpticaSanfrancisco.Migrations
                     Descrip_Color = table.Column<string>(type: "text", nullable: true),
                     Stock = table.Column<int>(type: "integer", nullable: false),
                     Precio = table.Column<decimal>(type: "numeric", nullable: false),
-                    Imagen = table.Column<string>(type: "text", nullable: true)
+                    Imagen = table.Column<string>(type: "text", nullable: true),
+                    Status = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

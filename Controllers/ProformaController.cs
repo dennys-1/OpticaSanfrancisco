@@ -24,7 +24,7 @@ namespace OpticaSanfrancisco.Controllers
         }
 
         // GET: Proforma
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Carrito()
         {
             var userID = _userManager.GetUserName(User);
             var items = from o in _context.Carrito select o;
@@ -158,6 +158,11 @@ namespace OpticaSanfrancisco.Controllers
         private bool ProformaExists(int id)
         {
             return _context.Carrito.Any(e => e.ID == id);
+        }
+        public IActionResult Proceso()
+        {
+            var listContactos=_context.Carrito.ToList();
+            return View(listContactos);
         }
     }
 }
