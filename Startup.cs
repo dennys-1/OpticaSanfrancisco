@@ -67,9 +67,10 @@ namespace OpticaSanfrancisco
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Documento}/{action=Documento}/{id?}");
                 endpoints.MapRazorPages();
             });
+             Rotativa.AspNetCore.RotativaConfiguration.Setup(env.WebRootPath, "../Rotativa");
         }
     }
 }
