@@ -164,5 +164,7 @@ namespace OpticaSanfrancisco.Controllers
             var listContactos=_context.Carrito.ToList();
             return View(listContactos);
         }
+
+      
     }
 }

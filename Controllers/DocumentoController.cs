@@ -27,6 +27,11 @@ namespace OpticaSanfrancisco.Controllers
             };
             
         }
+          [HttpGet]
+        public IActionResult Formulario()
+        {
+            return View();
+        }
 
    
 
