@@ -16,9 +16,8 @@ namespace OpticaSanfrancisco.Controllers
      public class ProductosController : Controller
     {
         private readonly ApplicationDbContext _context;
-         private IEnumerable<Validacion> _validacion;
-        private List<Tipo> ListaTipos;
-
+       
+        
         public ProductosController(ApplicationDbContext context)
         {
             _context = context;
@@ -157,51 +156,7 @@ namespace OpticaSanfrancisco.Controllers
         }
 
 
-         public IActionResult Formulario()
-        {
-            var ListaTipo = _context.Tipo.ToList();
-            var validacion = new Validacion();
-            dynamic model = new ExpandoObject();
-            model.validacion = validacion;
-            model.Tipo = ListaTipo;
-            return View(model);
-        }
-
-
-        //VALIDACION
-
-        [HttpPost]
-        public IActionResult Formulario(Validacion validacion)
-        {
-            validacion.IDTipo = int.Parse(Request.Form["IDTipo"]);
-            if (ModelState.IsValid)
-            {
-                _context.Add(validacion);
-                _context.SaveChanges();
-                validacion.Respuesta="validacion Creado";
-                return RedirectToAction("Index");
-            }
-            else{
-                validacion.Respuesta="No se pudo añadir";
-                return View(validacion);
-            }         
-        }        
-        
-        [HttpPost]
-        public IActionResult Cargar(Validacion objProducto){
-            if (ModelState.IsValid)
-            {
-                _context.Add(objProducto);
-                _context.SaveChanges();
-                objProducto.Respuesta = "";
-                return View(objProducto);
-            }else
-            {
-                objProducto.Respuesta = "";
-                return View(objProducto);
-            }
-            
-        }
+      
 
         //PDF
            public async Task<IActionResult> Documento()

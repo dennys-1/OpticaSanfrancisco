@@ -381,69 +381,6 @@ namespace OpticaSanfrancisco.Migrations
                     b.ToTable("t_proforma");
                 });
 
-            modelBuilder.Entity("OpticaSanfrancisco.Models.Tipo", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("ID")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<bool>("Deshabilitado")
-                        .HasColumnType("boolean")
-                        .HasColumnName("Deshabilitado");
-
-                    b.Property<string>("Nombre")
-                        .HasColumnType("text")
-                        .HasColumnName("Tipo");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Tipo");
-                });
-
-            modelBuilder.Entity("OpticaSanfrancisco.Models.Validacion", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("APELLIDO")
-                        .HasColumnType("text");
-
-                    b.Property<string>("EMAIL")
-                        .HasColumnType("text");
-
-                    b.Property<int>("IDTipo")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("NOMBRE")
-                        .HasColumnType("text");
-
-                    b.Property<int>("N_DOCUMENTO")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("OPCIONES")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TELEFONO")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Tipo")
-                        .HasColumnType("text");
-
-                    b.Property<int?>("TipoID")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("TipoID");
-
-                    b.ToTable("Validacion");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -504,21 +441,9 @@ namespace OpticaSanfrancisco.Migrations
                     b.Navigation("Producto");
                 });
 
-            modelBuilder.Entity("OpticaSanfrancisco.Models.Validacion", b =>
-                {
-                    b.HasOne("OpticaSanfrancisco.Models.Tipo", null)
-                        .WithMany("Validaciones")
-                        .HasForeignKey("TipoID");
-                });
-
             modelBuilder.Entity("OpticaSanfrancisco.Models.Productos", b =>
                 {
                     b.Navigation("ProformaItems");
-                });
-
-            modelBuilder.Entity("OpticaSanfrancisco.Models.Tipo", b =>
-                {
-                    b.Navigation("Validaciones");
                 });
 #pragma warning restore 612, 618
         }

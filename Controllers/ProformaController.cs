@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using OpticaSanfrancisco.Data;
 using OpticaSanfrancisco.Models;
 using Microsoft.AspNetCore.Identity;
+using Rotativa.AspNetCore;
 
 namespace OpticaSanfrancisco.Controllers
 {
@@ -163,6 +164,15 @@ namespace OpticaSanfrancisco.Controllers
         {
             var listContactos=_context.Carrito.ToList();
             return View(listContactos);
+        }
+
+         public async Task<IActionResult> Documento()
+        {
+           // return View(await _context.Documento.ToListAsync());
+             return new ViewAsPdf("Documento", await _context.Carrito.ToListAsync())
+            {
+                 // ...
+            };
         }
 
       

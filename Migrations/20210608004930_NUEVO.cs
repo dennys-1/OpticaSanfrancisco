@@ -3,9 +3,18 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace OpticaSanfrancisco.Migrations
 {
-    public partial class VALIDACIONES : Migration
+    public partial class NUEVO : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "Validacion");
+
+            migrationBuilder.DropTable(
+                name: "Tipo");
+        }
+
+        protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
                 name: "Tipo",
@@ -13,8 +22,8 @@ namespace OpticaSanfrancisco.Migrations
                 {
                     ID = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Tipo = table.Column<string>(type: "text", nullable: true),
-                    Deshabilitado = table.Column<bool>(type: "boolean", nullable: false)
+                    Deshabilitado = table.Column<bool>(type: "boolean", nullable: false),
+                    Tipo = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -27,14 +36,14 @@ namespace OpticaSanfrancisco.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    OPCIONES = table.Column<int>(type: "integer", nullable: false),
-                    N_DOCUMENTO = table.Column<int>(type: "integer", nullable: false),
-                    EMAIL = table.Column<string>(type: "text", nullable: true),
-                    NOMBRE = table.Column<string>(type: "text", nullable: true),
                     APELLIDO = table.Column<string>(type: "text", nullable: true),
+                    EMAIL = table.Column<string>(type: "text", nullable: true),
+                    IDTipo = table.Column<int>(type: "integer", nullable: false),
+                    NOMBRE = table.Column<string>(type: "text", nullable: true),
+                    N_DOCUMENTO = table.Column<int>(type: "integer", nullable: false),
+                    OPCIONES = table.Column<int>(type: "integer", nullable: false),
                     TELEFONO = table.Column<int>(type: "integer", nullable: false),
                     Tipo = table.Column<string>(type: "text", nullable: true),
-                    IDTipo = table.Column<int>(type: "integer", nullable: false),
                     TipoID = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
@@ -52,15 +61,6 @@ namespace OpticaSanfrancisco.Migrations
                 name: "IX_Validacion_TipoID",
                 table: "Validacion",
                 column: "TipoID");
-        }
-
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.DropTable(
-                name: "Validacion");
-
-            migrationBuilder.DropTable(
-                name: "Tipo");
         }
     }
 }

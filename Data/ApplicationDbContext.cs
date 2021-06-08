@@ -18,9 +18,6 @@ namespace OpticaSanfrancisco.Data
         public DbSet<OpticaSanfrancisco.Models.Productos> Productos { get; set; }
         public DbSet<OpticaSanfrancisco.Models.Proforma> Carrito { get; set; }
 
-         public DbSet<OpticaSanfrancisco.Models.Validacion> Vali { get; set; }
-
-          public DbSet<OpticaSanfrancisco.Models.Tipo> Tipo { get; set; }
 
 
     }
