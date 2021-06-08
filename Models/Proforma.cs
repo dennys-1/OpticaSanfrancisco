@@ -19,5 +19,7 @@ namespace OpticaSanfrancisco.Models
         public int Quantity{get; set;}
 
         public Decimal Price { get; set; }
+           public String Codigo {get; set;}
+             public String Imagen { get; set; }
     }
 }

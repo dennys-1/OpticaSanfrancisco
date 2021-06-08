@@ -1,0 +1,63 @@
+﻿@model IEnumerable<OpticaSanfrancisco.Models.Productos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>CARRITO</h1>
+
+
+<table class="table" style="margin-left: -10%;">
+    <thead>
+        <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.Imagen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo)
+            </th>
+            
+             <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+
+
+            <th scope="col">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.Imagen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+
+
+
+           
+        </tr>
+}
+    </tbody>
+</table>
+  <div class="get-started" style="text-align: center;">
+                <a class="btn btn-primary" href="../Productos/Proceso"> llevar</a>
+               <!--<button id="btt">  <a  style="text-align: center;border-radius: 4px;" asp-area="" asp-controller="Proforma" asp-action="Proceso">Confirmar</a></button>-->
+      </div>
+
+
+
+

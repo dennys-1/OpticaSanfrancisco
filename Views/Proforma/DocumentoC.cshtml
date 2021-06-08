@@ -31,10 +31,10 @@
         <thead>
             <tr>
                 <th scope="col">
-                    @Html.DisplayNameFor(model => model.Producto.Imagen)
+                    @Html.DisplayNameFor(model => model.Imagen)
                 </th>
                 <th scope="col">
-                    @Html.DisplayNameFor(model => model.Producto.Codigo)
+                    @Html.DisplayNameFor(model => model.Codigo)
                 </th>
                 <th scope="col">
                     @Html.DisplayNameFor(model => model.Quantity)
@@ -42,20 +42,17 @@
                 <th scope="col">
                     @Html.DisplayNameFor(model => model.Price)
                 </th>
-              
-                
-
-            </tr>
+        </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-               <tr>
+              <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Producto.Imagen)
+                @Html.DisplayFor(modelItem => item.Imagen)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Producto.Codigo)
+                @Html.DisplayFor(modelItem => item.Codigo)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Quantity)

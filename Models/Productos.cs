@@ -26,6 +26,7 @@ namespace OpticaSanfrancisco.Models
         public int Stock { get; set; }
         public decimal Precio { get; set; }
         public String Imagen { get; set; }
+         public int Quantity{get; set;}
       
         public String Status { get; set; }
 

@@ -10,6 +10,7 @@ using OpticaSanfrancisco.Data;
 using Microsoft.EntityFrameworkCore;
 using Rotativa.AspNetCore;
 using System.Dynamic;
+using Microsoft.AspNetCore.Identity;
 
 namespace OpticaSanfrancisco.Controllers
 {
@@ -17,6 +18,7 @@ namespace OpticaSanfrancisco.Controllers
     {
         private readonly ApplicationDbContext _context;
        
+      
         
         public ProductosController(ApplicationDbContext context)
         {
@@ -25,6 +27,10 @@ namespace OpticaSanfrancisco.Controllers
 
         // GET: Producto
         public async Task<IActionResult> Index()
+        {
+            return View(await _context.Productos.ToListAsync());
+        }
+         public async Task<IActionResult> IndexC()
         {
             return View(await _context.Productos.ToListAsync());
         }
@@ -167,6 +173,22 @@ namespace OpticaSanfrancisco.Controllers
                  // ...
             };
         }
+
+                   public async Task<IActionResult> DocumentoC()
+        {
+           // return View(await _context.Documento.ToListAsync());
+             return new ViewAsPdf("DocumentoC", await _context.Productos.ToListAsync())
+            {
+                 // ...
+            };
+        }
+         public IActionResult Proceso()
+        {
+            var listContactos=_context.Productos.ToList();
+            return View(listContactos);
+        }
+
+       
 
   
     }
