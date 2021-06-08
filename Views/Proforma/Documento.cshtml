@@ -1,0 +1,73 @@
+@model IEnumerable<OpticaSanfrancisco.Models.Proforma>
+
+@{
+    ViewData["Title"] = "Documento";
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ContactPDF</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="~/Img/logo.png" />
+        </div>
+        <div class="col-sm-8 text-center">
+            <h2>PRODUCTOS</h2>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Producto.Imagen)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Producto.Codigo)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+              
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+               <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.Imagen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+
+</body>
+</html>

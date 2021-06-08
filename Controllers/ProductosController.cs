@@ -8,13 +8,16 @@ using Microsoft.Extensions.Logging;
 using OpticaSanfrancisco.Models;
 using OpticaSanfrancisco.Data;
 using Microsoft.EntityFrameworkCore;
+using Rotativa.AspNetCore;
+using System.Dynamic;
 
 namespace OpticaSanfrancisco.Controllers
 {
      public class ProductosController : Controller
     {
         private readonly ApplicationDbContext _context;
-
+       
+        
         public ProductosController(ApplicationDbContext context)
         {
             _context = context;
@@ -151,5 +154,20 @@ namespace OpticaSanfrancisco.Controllers
         {
             return _context.Productos.Any(e => e.ID == id);
         }
+
+
+      
+
+        //PDF
+           public async Task<IActionResult> Documento()
+        {
+           // return View(await _context.Documento.ToListAsync());
+             return new ViewAsPdf("Documento", await _context.Productos.ToListAsync())
+            {
+                 // ...
+            };
+        }
+
+  
     }
 }

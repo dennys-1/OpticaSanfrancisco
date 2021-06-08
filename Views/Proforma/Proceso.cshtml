@@ -129,54 +129,10 @@
         </div>
         <hr class="mb-4">
 
-        <label class="mb-3 colorForm" >Payment</label>
-
-        <div class="d-block my-3 formM">
-          <div class="custom-control custom-radio">
-            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" style="background-color: #213B52;" checked="" required="">
-            <label class="custom-control-label colorForm" for="credit" >Tarjeta de Credito</label>
-          </div>
-          <div class="custom-control custom-radio formM">
-            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" style="background: #213B52;" required="">
-            <label class="custom-control-label colorForm" for="debit" >Tarjeta de Debito</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-3 formM">
-            <label for="cc-name" class="colorForm">Nombre del Propietario de la Tarjeta</label>
-            <input type="text" class="form-control" id="cc-name" placeholder="Ingresa el nombre del propietario de la tarjeta" required="">
-            <div class="invalid-feedback">
-              El nombre es requerido
-            </div>
-          </div>
-          <div class="col-md-6 mb-3 formM">
-            <label for="cc-number" class="colorForm">Numero de la Tarjeta de Credito</label>
-            <input type="text" class="form-control" id="cc-number" placeholder="Ingresa el numero de la tarjeta" required="">
-            <div class="invalid-feedback">
-              El numero de la tarjeta de credito es requerida
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-3 formM">
-            <label for="cc-expiration" class="colorForm">Fecha de Expiración</label>
-            <input type="text" class="form-control" id="cc-expiration" placeholder="Fecha de expiración es requerida" required="">
-            <div class="invalid-feedback">
-            Fecha de expiración es requerida
-            </div>
-          </div>
-          <div class="col-md-6 mb-3 formM">
-            <label for="cc-cvv" class="colorForm">CVV</label>
-            <input type="text" class="form-control" id="cc-cvv" placeholder="El CVV es requerido" required="">
-            <div class="invalid-feedback">
-              El CVV es requerido
-            </div>
-          </div>
-        </div>
-        <hr class="mb-4">
-        <div class="button">
-        <button style="border-radius: 4px;" type="submit" onclick="confirm('Compra aceptada. Gracias por su compra');  clicked();">Comprar Ahora</button>
-        </div>
+       
+       <p>
+    <a asp-action="Documento">COMPRAR AHORA</a>
+</p>
         </form>
     </div>
   </div>
