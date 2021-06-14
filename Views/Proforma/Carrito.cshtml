@@ -16,7 +16,7 @@
 
     <table class="table table-hover">
     <thead class="tables">
-        <tr>
+        <tr style="color: white;">
                 <th scope="col">
                     @Html.DisplayNameFor(model => model.Producto.Imagen)
                 </th>
@@ -29,6 +29,9 @@
                 <th scope="col">
                     @Html.DisplayNameFor(model => model.Price)
                 </th>
+                <th scope="col" >
+                    <p >Borrar</p>
+                </th>
         </tr>
     </thead>
 	@foreach (var item in Model)
@@ -37,7 +40,9 @@
         //{
             <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Producto.Imagen)
+               <img class="img-responsive" width="150" height="180" style="margin-left: 20%;"
+                       src="~/Img/Productos/@item.Producto.Imagen" alt="@item.Producto.Imagen"  />
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Producto.Codigo)
@@ -48,7 +53,19 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
+            <td>
+                <a href="/Proforma/Editar/@item.ID" class="btn btn-secondary">Editar</a>
+                <form action="/Proforma/borrarregion" method="post" class="d-inline-block">
+                    <input type="hidden" name="id" value="@item.ID" />
+                    <button class="btn btn-hover" ><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 30 30">
+  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+</svg></button>
+                </form>
+            
+                
+            </td>
             </tr>
+            
         //}
 	}
     </tbody>    
@@ -58,7 +75,7 @@
     </section>
 
       <div class="get-started" style="text-align: center;">
-                <a class="btn btn-primary" href="../Proforma/Proceso"> llevar</a>
+                <a class="btn btn-primary" href="../Proforma/Proceso"> Comprar</a>
                <!--<button id="btt">  <a  style="text-align: center;border-radius: 4px;" asp-area="" asp-controller="Proforma" asp-action="Proceso">Confirmar</a></button>-->
       </div>
       <br>

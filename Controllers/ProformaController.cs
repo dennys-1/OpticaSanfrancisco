@@ -97,7 +97,7 @@ namespace OpticaSanfrancisco.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,UserID,Quantity,Price")] Proforma proforma)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Quantity,Price")] Proforma proforma)
         {
             if (id != proforma.ID)
             {
@@ -122,7 +122,7 @@ namespace OpticaSanfrancisco.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Carrito));
             }
             return View(proforma);
         }
@@ -174,7 +174,33 @@ namespace OpticaSanfrancisco.Controllers
                  // ...
             };
         }
+//****************************************************************************************
+       [HttpPost]
+        public IActionResult BorrarRegion(int id) {
+            var carrito = _context.Carrito.Find(id);
+            _context.Remove(carrito);
+            _context.SaveChanges();
 
-      
+            return RedirectToAction("Carrito");
+        }
+          public IActionResult Editar(int id) {
+            var region = _context.Carrito.Find(id);
+            return View(region);
+        }
+
+        [HttpPost]
+        public IActionResult Editar(Proforma r) {
+            if (ModelState.IsValid) {
+                var region = _context.Carrito.Find(r.ID);
+                region.Quantity = r.Quantity;
+                _context.SaveChanges();
+                return RedirectToAction("EditarConfirmacion");
+            }
+            return View(r);
+        }
+
+        public IActionResult EditarConfirmacion() {
+            return View();
+        }
     }
 }
