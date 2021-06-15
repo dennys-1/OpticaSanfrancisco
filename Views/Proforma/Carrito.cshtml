@@ -78,7 +78,7 @@
       @foreach (var item in Model){
          <tr>
             @{
-               total = total + item.Price;
+               total = total + item.Price*item.Quantity;
                contar++;
             }
          </tr>

@@ -1,16 +1,13 @@
 ﻿@model IEnumerable<OpticaSanfrancisco.Models.Productos>
 
-@{
-    ViewData["Title"] = "Index";
-}
 
-<h1>Index</h1>
+<h1> Lista de Productos</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Crear Nuevo Producto</a>
 </p>
 <table class="table" style="margin-left: -10%;">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Codigo)
