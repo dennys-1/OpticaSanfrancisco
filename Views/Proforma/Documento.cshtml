@@ -51,8 +51,10 @@
             @foreach (var item in Model)
             {
                <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Producto.Imagen)
+           <td>
+               <img class="img-responsive" width="150" height="180" style="margin-left: 20%;"
+                       src="~/Img/Productos/@item.Producto.Imagen" alt="@item.Producto.Imagen"  />
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Producto.Codigo)
@@ -67,6 +69,29 @@
             }
         </tbody>
     </table>
+    @{
+          Decimal total = 0;
+
+         var contar = 0;
+      }
+      @foreach (var item in Model){
+         <tr>
+            @{
+               total = total + item.Price;
+               contar++;
+            }
+         </tr>
+      }
+
+
+
+<div class="container">
+         <h4>Total: S/ @total </h4> 
+           
+            </div>
+           
+            </div>
+    </section>
 
 
 </body>

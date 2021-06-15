@@ -70,6 +70,29 @@
 	}
     </tbody>    
 </table>
+@{
+          Decimal total = 0;
+
+         var contar = 0;
+      }
+      @foreach (var item in Model){
+         <tr>
+            @{
+               total = total + item.Price;
+               contar++;
+            }
+         </tr>
+      }
+
+
+
+<div class="container">
+         <h4>Total: S/ @total </h4> 
+           
+            </div>
+           
+            </div>
+    </section>
            
             </div>
     </section>
