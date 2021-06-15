@@ -169,10 +169,13 @@ namespace OpticaSanfrancisco.Controllers
          public async Task<IActionResult> Documento()
         {
            // return View(await _context.Documento.ToListAsync());
-             return new ViewAsPdf("Documento", await _context.Carrito.ToListAsync())
-            {
-                 // ...
-            };
+             var userID = _userManager.GetUserName(User);
+            var items = from o in _context.Carrito select o;
+            items = items.
+                Include(p => p.Producto).
+                Where(s => s.UserID.Equals(userID));
+            
+           return new ViewAsPdf("Documento",await items.ToListAsync());
         }
 //****************************************************************************************
        [HttpPost]
