@@ -66,8 +66,22 @@ namespace OpticaSanfrancisco.Controllers
                 await _context.SaveChangesAsync();
                 return  RedirectToAction(nameof(Index));
             }
+        }
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        }        
+            var producto = await _context.Productos
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (producto == null)
+            {
+                return NotFound();
+            }
 
+            return View(producto);
+        }       
     }
 }
